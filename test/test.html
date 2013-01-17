@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test - jQuery Input Locker</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="../src/jquery.inputlocker.js"></script>
+    <script>
+        jQuery(function ($) {
+            $('a').on('click', function (event) {
+                $(':text').inputLocker($(event.target).attr('href').substr(1));
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <a href="#lock">Lock</a>
+    <a href="#unlock">Unlock</a>
+</body>
+</html>
